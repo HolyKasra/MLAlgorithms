@@ -14,7 +14,7 @@
 - Decision Trees
 - Random Forest (Classification and Regression)
 - AdaBoost
-= Gradient Boost (Classification and Regression)
+- Gradient Boost (Classification and Regression)
 - Principal Component Analysis (PCA)
 - Discriminant Analysis Algorithms (LDA + QDA)
 - [More Algorithms will be added soon...]
