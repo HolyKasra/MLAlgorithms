@@ -1,6 +1,9 @@
 import numpy as np
 
 class PCA:
+    '''
+    Simple Implementation of PCA algorithm for dimension reduction
+    '''
     def __init__(self, n_components=None):
         self.n_components = n_components
         self.__eigvals = None
