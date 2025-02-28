@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import kmeans_plusplus
 
-
 class KMeans:
     '''
     Simple Implementation of K-Means Algorithm
