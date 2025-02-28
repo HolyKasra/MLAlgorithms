@@ -1,4 +1,4 @@
-# ML algorithms Implementation!
+# ML algorithms Implementation
 
 > Implementing traditional machine learning algorithms from scratch!
 
