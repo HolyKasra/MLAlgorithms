@@ -1,19 +1,23 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.cluster import kmeans_plusplus
+
 
 class KMeans:
-    def __init__(self, n_clusters, random_state=1):
+    '''
+    Simple Implementation of K-Means Algorithm
+    Weights are initialized using the K-Means++ algorithm --> better convergence
+    '''
+    def __init__(self, n_clusters,  random_state=1):
         self.n_clusters = n_clusters
         self.random_state = random_state
         self.labels = None
         self.centers = None
 
     def fit(self, X):
-
-        rng = np.random.RandomState(seed=self.random_state)
-        centers = rng.permutation(X)[:self.n_clusters]
+        # Weight Initialization using kmeans++
+        centers, _ = kmeans_plusplus(X, self.n_clusters)
         converged = False
-
         while not converged:
             dist = {key:[] for key in range(self.n_clusters)}
             for x in X:
@@ -32,6 +36,7 @@ class KMeans:
         for c in range(self.n_clusters):
             distance[:, c] = np.linalg.norm(self.centers[c]-X, axis=1)
         return np.argmin(distance, axis=1)
+
     
     def plot_clusters(self, X, title=None, alpha=0.6):
         centers = self.centers
@@ -52,5 +57,8 @@ if __name__ == '__main__':
     kmeans = KMeans(n_clusters=4)
     kmeans.fit(X)
 
+    # Assigning labels to each cluster
     y_labels = kmeans.assign_labels(X)
+
+    # Plotting clusters
     kmeans.plot_clusters(X, title='K-Means Clustering Result')
