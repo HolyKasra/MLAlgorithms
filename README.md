@@ -17,6 +17,7 @@
 - Gradient Boost (Classification and Regression)
 - Principal Component Analysis (PCA)
 - Discriminant Analysis Algorithms (LDA + QDA)
+- K-Means Clustering (using K-Means++ center initialization)
 - [More Algorithms will be added soon...]
 
 ## Installation and usage.
