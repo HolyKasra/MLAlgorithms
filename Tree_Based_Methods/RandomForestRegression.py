@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 import numpy as np
 from typing import Optional
+from regression_trees import RegressionTree
 
 @dataclass
 class RFRegressor:
@@ -36,7 +37,6 @@ class RFRegressor:
 if __name__ == '__main__':
       from sklearn.metrics import accuracy_score
       from sklearn.model_selection import train_test_split
-      from regression_trees import RegressionTree
       import matplotlib.pyplot as plt
 
       # Data
